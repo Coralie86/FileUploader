@@ -1,0 +1,20 @@
+<head>
+    <link rel="stylesheet" href="/common.css">
+    <link rel="stylesheet" href="/folder.css">
+    <link rel="stylesheet" href="/file.css">
+</head>
+<body>
+    <div class="mainContent">
+        <%- include('navBar') %>
+        <% if(locals.user && locals.folderId) {%>
+            <a href="/<%= folderId%>/edit" id="newFolder" >Upload a File</a>
+        <% } %>
+        <div class="fileList">
+            <% if(locals.fileList) {%>
+                <% fileList.forEach((file) => {%>
+                    <li><%- include('file', {file: file})%></li>
+                <%})%>
+            <%}%>
+        </div>
+    </div>
+</body>

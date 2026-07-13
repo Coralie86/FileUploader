@@ -1,0 +1,18 @@
+<form class="contentForm uploadForm" method="POST" action="<%=link%>" enctype="multipart/form-data" >Upload a file in the folder.
+    <div class="inputs">
+        <% if(!locals.folder && locals.folderList) {%>
+            <label for="folderId">Folder Selected :
+                <select name="folderId" class="dropdown" >
+                    <% folderList.forEach((fld) => { %>
+                        <option value="<%=fld.id %>"><%= fld.title%></option>
+                    <% }); %>
+                </select>
+            </label> 
+        <% } %>
+        <input name="uploadedFile" type="file" class="upload fileSelector" required>
+    </div>
+    <div class="buttonForm">
+        <button type="Submit" class="submitBtn">SUBMIT</button>
+        <a href="/" class="cancelBtn">BACK</a>
+    </div>
+</form>

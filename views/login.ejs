@@ -1,0 +1,22 @@
+<head>
+    <link rel="stylesheet" href="/common.css">
+    <link rel="stylesheet" href="/form.css">
+</head>
+<body>
+    <div class="mainContent">
+        <%- include('navBar') %>
+        <div class="form">
+            <%- include('errors.ejs') %>
+            <form class="contentForm" method="POST" action="/login" >LogIn
+                <div class="inputs">
+                <input name="username" placeholder="Insert your Email" type="text" class="input" required>
+                <input name="password" placeholder="Enter your Password" type="password" class="input" required>
+                </div>
+                <div class="buttonForm">
+                    <button type="Submit" class="submitBtn">CONNECT</button>
+                    <a href="/" class="cancelBtn">BACK</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>

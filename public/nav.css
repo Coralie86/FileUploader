@@ -1,0 +1,30 @@
+#navBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(187, 221, 223);
+    font-size: 25px;
+    padding: 0px 50px;
+    box-shadow: 0 1px 5px rgb(37, 84, 102);
+    min-width: 640px;
+}
+
+#listHome {
+    display: flex;
+    gap: 35px;
+    list-style: none;
+}
+
+#listHome > a {
+    text-decoration: none;
+    color: black;
+    padding: 5px 10px;
+}
+
+#listHome > a:hover {
+    text-decoration: none;
+    color: black;
+    background-color: rgb(193, 174, 211);
+    border-radius: 5px;
+    padding: 5px 10px;
+}

@@ -1,0 +1,15 @@
+<head>
+    <link rel="stylesheet" href="/nav.css">
+</head>
+<div id="navBar">File Uploader
+    <ul id="listHome">
+        <a href="/"><li><div id="home" >Home</div></li></a>
+        <% if (locals.user) {%>
+            <a href="/upload"><li><div id="category" >Upload</div></li></a>
+            <a href="/login/logout"><li><div id="products" >Logout</div></li></a>
+        <%} else {%>
+            <a href="/sign-up"><li><div id="category" >Sign up</div></li></a>
+            <a href="/login"><li><div id="products" >Login</div></li></a>
+        <%}%>
+    </ul>
+</div>

@@ -1,0 +1,12 @@
+<div class="foldersList">
+    <% if(locals.user) {%>
+        <a href="/newFolder" id="newFolder" >CREATE A FOLDER</a>
+    <% } %>
+    <ul>
+        <% if(locals.folders) { %>
+            <% folders.forEach( (folder) => {%>
+                <li><%- include('folder', {folder: folder}) %></li>
+            <%})%>
+        <% } %>
+    </ul>
+</div>

@@ -1,0 +1,17 @@
+<div class="folderCard">
+    <div class="folderInfo">
+        <div class="foldertitle"><%= folder.title %></div>
+        <div class="folderdescription"><%= folder.title %></div>
+    </div>
+    <% if(locals.user) {%>
+        <div class="actions">
+            <div class="links">
+                <a class="editLink" href="/<%=folder.id%>/edit">Edit</a>
+                <a class="filesList" href="/<%=folder.id%>/fileList">Files</a>
+            </div>
+            <form METHOD="POST" action="/<%=folder.id%>/delete">
+                <button class="deleteForm" type="submit">DELETE</button>
+            </form>
+        </div>
+    <%}%>
+</div>

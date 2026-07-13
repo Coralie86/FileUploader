@@ -1,0 +1,15 @@
+<head>
+    <link rel="stylesheet" href="/common.css">
+    <link rel="stylesheet" href="/form.css">
+</head>
+<body>
+    <div class="mainContent">
+        <%- include('navBar') %>
+        <div class="form">
+            <% if(locals.user) {%>
+                <%- include('errors.ejs') %>
+                <%- include('fileUploadForm') %>
+            <% } %>
+        </div>
+    </div>
+</body>

@@ -1,0 +1,38 @@
+<head>
+    <link rel="stylesheet" href="/common.css">
+    <link rel="stylesheet" href="/form.css">
+</head>
+<body>
+    <div class="mainContent">
+        <%- include('navBar') %>
+        <div class="form">
+            <% if(locals.user) {%>
+                <% if(!locals.folder) {%>
+                    <%- include('errors.ejs') %>
+                    <form class="contentForm" method="POST" action="/newFolder" >Create a new Folder.
+                        <div class="inputs">
+                            <input name="titleFolder" placeholder="Insert a title" type="text" class="input" required>
+                            <input name="descriptionFolder" placeholder="Insert a description" type="text" class="input" required>
+                        </div>
+                        <div class="buttonForm">
+                            <button type="Submit" class="submitBtn">SUBMIT</button>
+                            <a href="/" class="cancelBtn">BACK</a>
+                        </div>
+                    </form>
+                <% } else { %>
+                    <form class="contentForm" method="POST" action="/<%=folder.id%>/edit" >Modify Folder Information.
+                        <div class="inputs">
+                            <input name="titleFolder" value="<%=folder.title%>" type="text" class="input" required>
+                            <input name="descriptionFolder" value="<%=folder.description%>" type="text" class="input" required>
+                        </div>
+                        <div class="buttonForm">
+                            <button type="Submit" class="submitBtn">UPDATE</button>
+                            <a href="/" class="cancelBtn">BACK</a>
+                        </div>
+                    </form>
+                    <%- include('fileUploadForm', {folder: folder}) %>
+                <% } %>
+            <% } %>
+        </div>
+    </div>
+</body>

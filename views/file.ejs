@@ -1,0 +1,7 @@
+<% if(locals.file) {%>
+    <div class="file">
+        <div class="fileName"><%= file.name%></div>
+        <div class="fileSize"><%= file.size%> bytes</div>
+        <div class="fileDate"><%= file.upload_date.toLocaleString()%></div>
+    </div>
+<% } %>
